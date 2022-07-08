@@ -5,6 +5,9 @@ provider "aws" {
 }
 resource "random_string" "random_suffix" {
 	length = 5
+	min_upper=0
+	min_lower=5
+	min_special=0
 	lower=true
 	
 }
