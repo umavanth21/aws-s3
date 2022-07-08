@@ -3,6 +3,12 @@ provider "aws" {
 	access_key = var.access_key
 	secret_key = var.secret_key
 }
-resource "aws_s3_bucket" "resource_name"{
-  bucket = var.bucket_name
+resource "random_string" "random_suffix" {
+	length = 5
+	special = false
+	override_special = "/@$"
+}
+resource "aws_s3_bucket" "hcmx-s3"{
+	bucket ="hcmx-s3-${random_string.random_suffix.result}"
+ 
 }
