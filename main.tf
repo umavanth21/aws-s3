@@ -4,11 +4,12 @@ provider "aws" {
 	secret_key = var.secret_key
 }
 resource "random_string" "random_suffix" {
-	length = 5
+	length = 9
 	min_upper=0
 	min_lower=5
 	min_special=0
 	lower=true
+	min_numeric=4
 	
 }
 resource "aws_s3_bucket" "hcmx-s3"{
