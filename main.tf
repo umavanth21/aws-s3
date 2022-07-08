@@ -5,7 +5,7 @@ provider "aws" {
 }
 resource "random_string" "random_suffix" {
 	length = 5
-	special = false
+	lower=true
 	override_special = "/@$"
 }
 resource "aws_s3_bucket" "hcmx-s3"{
